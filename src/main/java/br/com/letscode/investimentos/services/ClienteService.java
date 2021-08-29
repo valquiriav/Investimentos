@@ -9,18 +9,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClienteService {
 
+    //aqui ele está chamando a interface, já que não podemos instanciar uma interface direto!
     private final ClienteRepository repository;
 
     @Autowired
     public ClienteService(ClienteRepository clienteRepository){
-        repository = clienteRepository;
+        this.repository = clienteRepository;
     }
 
     public Cliente saveNewCliente(Cliente novoCliente) {
         return repository.save(novoCliente);
     }
 
-    public Cliente getClienteById(Long clienteId){
+    public Cliente getClienteById(String clienteId){
         return repository.findById(clienteId).orElseThrow(ClienteNaoEncontradoException::new);
     }
 }

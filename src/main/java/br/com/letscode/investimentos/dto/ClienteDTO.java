@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ClienteDTO {
 
-    private Long cpf;
+    private String cpf;
 
     private String clienteNome;
 

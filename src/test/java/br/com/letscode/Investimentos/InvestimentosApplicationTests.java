@@ -1,4 +1,4 @@
-package br.com.letscode.vitreo;
+package br.com.letscode.Investimentos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

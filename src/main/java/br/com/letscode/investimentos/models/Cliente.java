@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
@@ -20,11 +22,11 @@ import java.time.LocalDate;
 @Table(name="cliente")
 public class Cliente {
     @Id
-    @Column(name = "cliente_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fundoId;
 
     @Column(name = "cpf", nullable = false)
-    private Long cpf;
+    private String cpf;
 
     @Column(name = "nome")
     private String clienteNome;
@@ -34,6 +36,9 @@ public class Cliente {
 
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
+
+    @Column(name = "idade")
+    private int idade;
 
     @Column(name = "perfil_risco")
     private br.com.letscode.investimentos.models.PerfilRiscoEnums perfilRisco;
